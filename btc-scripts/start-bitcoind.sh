@@ -6,7 +6,7 @@ gen101=0           # if set to 1, then will generate 101 blocks for
 daemonize=         # set to -daemon when starting bitcoind as a daemon
 datadir=
 network=-regtest
-printtoconsole=
+printtoconsole= # --printtoconsole if you want to print bitcoind output
 bloom=1
 cmd=bitcoind
 
@@ -96,4 +96,4 @@ if [ $gen101 -eq 1 -a $prevRun -eq 0 ]; then
 fi
 
 echo "Launching bitcoind..."
-$cmd -peerbloomfilters=$bloom -txindex -debug=1 $daemonize -datadir="$datadir" -server $network -listenonion=0 -keypool=10 -listen -rpcport=$port -rpcuser=yourrpcuser -rpcpassword=yourrpcpass -pid="$pidfile" -acceptnonstdtxn=0 $printtoconsole $*
+$cmd -addresstype="legacy" -peerbloomfilters=$bloom -txindex -debug=1 $daemonize -datadir="$datadir" -server $network -listenonion=0 -keypool=10 -listen -rpcport=$port -rpcuser=yourrpcuser -rpcpassword=yourrpcpass -pid="$pidfile" -acceptnonstdtxn=0 $printtoconsole $*

@@ -56,11 +56,8 @@
     <dependency>
       <groupId>org.bitcoinj</groupId>
       <artifactId>bitcoinj-core</artifactId>
-      <version>0.14.4</version>
+      <version>0.14.6</version>
       <scope>compile</scope>
-      <!--<version>0.15</version>
-      <scope>system</scope>
-      <systemPath>/home/alinush/repos/bitcoinj/core/target/bitcoinj-core-0.15-SNAPSHOT-bundled.jar</systemPath>-->
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
