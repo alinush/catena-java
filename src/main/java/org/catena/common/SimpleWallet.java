@@ -71,8 +71,15 @@ public class SimpleWallet extends Wallet {
             // Need our own custom Wallet subclass in CatenaService
             return new SimpleWallet(params, keyChainGroup);
         }
+        
     }
 
+    // TODO: check but I think this will ensure we always download the entire chain
+    @Override
+    public long getEarliestKeyCreationTime() {
+    	return 0;
+    }
+    
     /**
      * Returns the chain's key.
      * @return
