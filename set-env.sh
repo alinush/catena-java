@@ -26,20 +26,6 @@ else
     echo "\$PATH already set to $PATH"
 fi
 
-if [ "$(uname -s)" = "Linux" ]; then
-    echo "Linux detected... "
-    btc_srcs=/usr/bin/
-    if [ -d "$btc_srcs" -a -f "$btc_srcs/bitcoind" ]; then
-        export PATH="$PATH:$btc_srcs"
-        echo "Added bitcoind compiled binaries in '$btc_srcs' to \$PATH."
-    else
-        echo
-        echo "ERROR: No bitcoind detected in '$btc_srcs'"
-        echo "Please compile bitcoind in that location and retry!"
-        exit 1
-    fi
-fi
-
 if [ "$(uname -s)" = "Darwin" ]; then
     echo "Mac OS X detected... "
     btc_srcs=$HOME/repos/bitcoin/src
