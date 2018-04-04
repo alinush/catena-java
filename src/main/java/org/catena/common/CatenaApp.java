@@ -32,10 +32,12 @@ public class CatenaApp {
             // expected to be running a local "bitcoind -regtest" instance.
             svc.connectToLocalHost();
         }
-
+        
         // Download the block chain and wait until it's done.
         svc.startAsync();
         svc.awaitRunning();
+        
+        log.info("Catena startup complete.... chain at: "+svc.chain().getChainHead().toString());
         
         wallet = svc.getCatenaWallet();
         ext = wallet.getCatenaExtension();
